@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gestion de reaseguros</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <h1>Contratos de reaseguros</h1>
+
+    <form id="contract-form">
+        <input type="text" id="name" placeholder="Nombre del contrato" required />
+        <input type="number" id="premium" placeholder="Prima" required step="1" />
+        <button type="submit">Agregar Contrato</button>
+      </form>
+      <ul id="contract-list"></ul>
+
+    <script type="module" src="main.js"></script>
+    
+</body>
+</html>
