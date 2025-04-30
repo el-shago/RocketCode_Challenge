@@ -12,7 +12,30 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
     restart: unless-stopped
 
+  backend:
+    build: ./backend
+    container_name: reaseguro_backend
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: rocketcode_test
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: reaseguro_frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
 volumes:
-  pgdata:
+  pgdata: {}

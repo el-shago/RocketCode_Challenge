@@ -1,7 +1,7 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import contractsRoutes from '../backend/routes/contract.js';
+import contractsRoutes from './routes/contract.js';
 
 dotenv.config();
 
